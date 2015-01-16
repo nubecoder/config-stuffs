@@ -1,0 +1,78 @@
+[user]
+  email = nubecoder@gmail.com
+  name = nubecoder
+[push]
+  default = simple
+[rerere]
+  enabled = true
+[credential]
+  helper = cache --timeout=3600
+[color]
+  ui = auto
+[color "branch"]
+  current = green
+  local = blue
+  remote = yellow
+[color "diff"]
+  meta = yellow
+  frag = magenta
+  old = red
+  new = green
+[color "status"]
+  added = green
+  changed = red
+  untracked = blue
+[alias]
+  adc	=	add changelog
+  adr	=	add README
+  adv	=	add -v
+  br	=	branch
+  bra	=	branch -a
+  brd	=	branch -d
+  brdf	=	branch -D
+  cf	=	config -e --global
+  ci	=	commit -v
+  cis	=	commit -v -s
+  cia	=	commit --amend
+  cic	=	commit -v -c
+  cics	=	commit -v -c -s
+  cim	=	commit -v -m
+  cims	=	commit -v -m -s
+  co	=	checkout
+  cob	=	checkout -b
+  cp	=	cherry-pick -n
+  di	=	diff
+  difa	=	diff HEAD
+  difc	=	diff --cached
+  difcs	=	diff --cached --stat
+  difs	=	diff -b --stat
+  la	=	"!grep '\t=' ~/.gitconfig | less"
+  lg	=	log --graph --pretty=format:'%C(cyan)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  llg	=	log --graph --pretty=format:'%C(cyan)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
+  lga	=	log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lgc	=	log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lgf	=	log -p
+  lgs	=	log --stat
+  lgx	=	log --graph --pretty=format:'%C(cyan)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --stat
+  llog	=	log --date=local
+  ls	=	ls-files
+  mrg	=	merge --log
+  mrgnf	=	merge --log --no-ff
+  po	=	push origin
+  ra	=	remote add
+  rb	=	rebase
+  rba	=	rebase --abort
+  rbc	=	rebase --continue
+  rbi	=	rebase -i
+  rr	=	remote rm
+  rs	=	reset
+  rs-hard	=	reset --hard
+  rt	=	remote
+  rta	=	remote add
+  st	=	status
+  sta	=	stash apply
+  staged	=	diff --cached
+  std	=	stash drop
+  stl	=	stash list
+  sts	=	stash save
+  unstage	=	reset HEAD

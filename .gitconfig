@@ -64,6 +64,7 @@
   rba	=	rebase --abort
   rbc	=	rebase --continue
   rbi	=	rebase -i
+  rl	=	remote -v
   rr	=	remote rm
   rs	=	reset
   rs-hard	=	reset --hard

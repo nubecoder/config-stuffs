@@ -46,7 +46,7 @@
   difc	=	diff --cached
   difcs	=	diff --cached --stat
   difs	=	diff -b --stat
-  la	=	"!grep '\t=' ~/.gitconfig | less"
+  la	=	"!grep '  =' ~/.gitconfig | less"
   lg	=	log --graph --pretty=format:'%C(cyan)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   llg	=	log --graph --pretty=format:'%C(cyan)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
   lga	=	log --graph --decorate --pretty=oneline --abbrev-commit --all

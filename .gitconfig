@@ -22,6 +22,10 @@
   added = green
   changed = red
   untracked = cyan
+[apply]
+  whitespace = fix
+[diff]
+  wsErrorHighlight = all
 [alias]
   adc	=	add changelog
   adr	=	add README

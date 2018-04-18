@@ -1,0 +1,37 @@
+" Vim configuration
+
+" vim-plug instalation:
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" vim-plug configuration:
+call plug#begin('~/.vim/plugged')
+
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'vim-airline/vim-airline'
+"Plug 'flazz/vim-colorschemes'
+"Plug 'bf4/vim-dark_eyes'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+
+" Persistent undo
+if has('persistent_undo')
+  " Enable persistent undo
+  set undofile
+  " Create undo directory if it doesn't exist
+  if empty(glob('~/.vim/undo'))
+    silent !mkdir -p ~/.vim/undo
+  endif
+  " Location of undo files
+  set undodir=$HOME/.vim/undo
+endif
+
+"colorscheme dark_eyes
+"colorscheme SlateDark
+set background=dark

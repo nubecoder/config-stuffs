@@ -11,6 +11,8 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'adonis0147/prettyguides'
+Plug 'ogier/guessindent'
 Plug 'vim-airline/vim-airline'
 "Plug 'flazz/vim-colorschemes'
 "Plug 'bf4/vim-dark_eyes'

@@ -37,3 +37,10 @@ endif
 "colorscheme dark_eyes
 "colorscheme SlateDark
 set background=dark
+
+" Run :GuessIndent every time a file is loaded
+autocmd BufReadPost * :GuessIndent
+
+" enable highlighting and stripping whitespace on save by default
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1

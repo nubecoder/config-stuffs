@@ -1,83 +1,139 @@
 [user]
   email = nubecoder@gmail.com
   name = nubecoder
-[push]
-  default = simple
+[core]
+  editor = vim
+  autocrlf = input
+  excludesfile = ~/.gitignore_global
+  pager = less -F -X
 [rerere]
-  enabled = true
-[credential]
-  helper = cache --timeout=3600
-[color]
-  ui = auto
-[color "branch"]
-  current = green
-  local = cyan
-  remote = yellow
-[color "diff"]
-  meta = yellow
-  frag = magenta
-  old = red
-  new = green
-[color "status"]
-  added = green
-  changed = red
-  untracked = cyan
-[apply]
-  whitespace = fix
+  enabled = 1
+[merge]
+  conflictstyle = diff3
 [diff]
   wsErrorHighlight = all
+[branch]
+  autosetuprebase = always
+[branch "master"]
+  rebase = true
+[push]
+  default = tracking
+[pull]
+  rebase = true
+[init]
+  defaultBranch = main
+
+# Colors:
+[color]
+  ui = true
+[color "diff"]
+  plain = normal
+  meta = bold
+  frag = cyan
+  old = red
+  new = green
+  commit = yellow
+  whitespace = cyan reverse
+  #whitespace = normal red
+[color "branch"]
+  current = green
+  local = normal
+  remote = red
+  plain = normal
+[color "status"]
+  header = normal
+  #added = red
+  added = red bold
+  updated = green
+  #changed = red 
+  changed = red bold
+  untracked = red
+  nobranch = red
+[color "grep"]
+  match = normal
+[color "interactive"]
+  prompt = normal
+  header = normal
+  help = normal
+  error = normal
+
+# Aliases
 [alias]
-  adc	=	add changelog
-  adr	=	add README
-  adv	=	add -v
-  br	=	branch
-  bra	=	branch -a
-  brd	=	branch -d
-  brdf	=	branch -D
-  cf	=	config -e --global
-  ci	=	commit -v
-  cis	=	commit -v -s
-  cia	=	commit --amend
-  cic	=	commit -v -c
-  cics	=	commit -v -c -s
-  cim	=	commit -v -m
-  cims	=	commit -v -m -s
-  co	=	checkout
-  cob	=	checkout -b
-  cp	=	cherry-pick -n
-  di	=	diff
-  difa	=	diff HEAD
-  difc	=	diff --cached
-  difcs	=	diff --cached --stat
-  difs	=	diff -b --stat
-  la	=	"!grep '\t=' ~/.gitconfig | less"
-  lg	=	log --graph --pretty=format:'%C(cyan)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  llg	=	log --graph --pretty=format:'%C(cyan)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
-  lga	=	log --graph --decorate --pretty=oneline --abbrev-commit --all
-  lgc	=	log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  lgf	=	log -p
-  lgs	=	log --stat
-  lgx	=	log --graph --pretty=format:'%C(cyan)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --stat
-  llog	=	log --date=local
-  ls	=	ls-files
-  mrg	=	merge --log
-  mrgnf	=	merge --log --no-ff
-  po	=	push origin
-  ra	=	remote add
-  rb	=	rebase
-  rba	=	rebase --abort
-  rbc	=	rebase --continue
-  rbi	=	rebase -i
-  rl	=	remote -v
-  rr	=	remote rm
-  rs	=	reset
-  rs-hard	=	reset --hard
-  rt	=	remote
-  rta	=	remote add
-  st	=	status
-  sta	=	stash apply
-  staged	=	diff --cached
-  std	=	stash drop
-  stl	=	stash list
-  sts	=	stash save
-  unstage	=	reset HEAD
+  adc  = add changelog
+  adp  = add -p
+  adr  = add README
+  adv  = add -v
+  br  = branch
+  bra  = branch -a
+  brd  = branch -d
+  brdf  = branch -D
+  brm  = branch -m
+  cf  = config -e --global
+  ci  = commit -v
+  cis  = commit -v -s
+  cia  = commit --amend
+  cic  = commit -v -c
+  cics  = commit -v -c -s
+  cim  = commit -v -m
+  cims  = commit -v -m -s
+  co  = checkout
+  cob  = checkout -b
+  cp  = cherry-pick
+  cpn  = cherry-pick -n
+  di  = diff
+  difa  = diff HEAD
+  difc  = diff --cached
+  difcls  = "!clear && git diff --cached"
+  difcs  = diff --cached --stat
+  difs  = diff -b --stat
+  dump  = cat-file -p
+  hist  = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  la  = "!grep '  = ' ~/.gitconfig | less"
+  lg  = log --graph --pretty=format:'%C(cyan)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  llg  = log --graph --pretty=format:'%C(cyan)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
+  lga  = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lgc  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lgf  = log -p
+  lgfn  = log -p -n
+  lgn  = log --graph --pretty=format:'%C(cyan)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n
+  lgs  = log --stat
+  lgsn  = log --stat -n
+  lgx  = log --graph --pretty=format:'%C(cyan)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --stat
+  llog  = log --date=local
+  ls  = ls-files
+  mrg  = merge --log
+  mrgnf  = merge --log --no-ff
+  plr  = pull -r
+  po  = push origin
+  ra  = remote add
+  rb  = rebase
+  rba  = rebase --abort
+  rbc  = rebase --continue
+  rbe  = rebase --edit-todo
+  rbi  = rebase -i
+  rbir  = rebase -i --root
+  rl  = remote -v
+  rmc  = rm --cached
+  rr  = remote rm
+  rs  = reset
+  rs-hard  = reset --hard
+  rt  = remote
+  rta  = remote add
+  rso  = remote show origin
+  rpo  = remote prune origin
+  rpon  = remote prune origin --dry-run
+  st  = status
+  sta  = stash apply
+  staged  = diff --cached
+  std  = stash drop
+  stki  = stash --keep-index
+  stl  = stash list
+  stp  = stash pop
+  stpa  = stash save --patch
+  stpu  = stash push
+  stpum  = stash push -m
+  sts  = stash save
+  stsh  = stash show
+  stshp  = stash show -p
+  type  = cat-file -t
+  unstage  = reset HEAD
